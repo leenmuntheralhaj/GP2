@@ -1,0 +1,228 @@
+.login-card {
+  max-width: 460px;
+  width: 100%;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(13, 202, 240, 0.12);
+  color: #0dcaf0;
+  font-size: 22px;
+}
+
+.sidebar {
+  min-height: calc(100vh - 56px);
+  background: rgba(0,0,0,0.18);
+}
+
+.kpi-card {
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(0,0,0,0.25);
+}
+
+.kpi {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.small-kpi {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.chart-card {
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(0,0,0,0.25);
+}
+
+.chart-wrap {
+  height: 340px;
+}
+
+.chart-wrap-sm {
+  height: 180px;
+}
+
+.table-wrap {
+  max-height: 360px;
+  overflow: auto;
+}
+
+/* scrollbar (nice in dark theme) */
+.table-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
+.table-wrap::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 10px; }
+.table-wrap::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+
+/* Print styles */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .navbar, .sidebar, #reportFilters button, #btnPrintReport,
+  .btn, nav, aside { display: none !important; }
+  .col-lg-10 { width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; }
+  .card { border: 1px solid #ccc !important; background: #fff !important; color: #000 !important; }
+  .table { color: #000 !important; }
+  .table th, .table td { border-color: #ccc !important; }
+  .badge { border: 1px solid #999 !important; background: transparent !important; color: #000 !important; }
+  .text-secondary, .text-danger, .text-info, .text-success, .text-warning { color: #000 !important; }
+  #page-reports { display: block !important; }
+  .page:not(#page-reports) { display: none !important; }
+  .print-header { display: block !important; }
+}
+.print-header { display: none; }
+
+/* ===========================
+   EUS AWARENESS CARD CAROUSEL
+   =========================== */
+.eus-awareness-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.eus-awareness-slide {
+  display: none;
+  animation: slideIn 0.5s ease;
+}
+
+.eus-awareness-slide.active {
+  display: block;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.eus-awareness-card {
+  border-radius: 12px;
+  padding: 20px 24px;
+  border: 1px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.eus-awareness-card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.08;
+  background: currentColor;
+}
+
+.eus-awareness-card .card-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.eus-awareness-card .card-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.eus-awareness-card .card-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+}
+
+.eus-awareness-card.ddos     { background: rgba(13,110,253,0.12); border-color: rgba(13,110,253,0.35); color: #5b9bf5; }
+.eus-awareness-card.brute    { background: rgba(220,53,69,0.12);  border-color: rgba(220,53,69,0.35);  color: #f08080; }
+.eus-awareness-card.phishing { background: rgba(255,193,7,0.12);  border-color: rgba(255,193,7,0.35);  color: #ffc107; }
+.eus-awareness-card.malware  { background: rgba(111,66,193,0.12); border-color: rgba(111,66,193,0.35); color: #b48fff; }
+.eus-awareness-card.sql      { background: rgba(13,202,240,0.12); border-color: rgba(13,202,240,0.35); color: #0dcaf0; }
+.eus-awareness-card.default  { background: rgba(40,167,69,0.12);  border-color: rgba(40,167,69,0.35);  color: #5cb85c; }
+
+.eus-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.eus-carousel-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.eus-carousel-dots span.active {
+  background: rgba(255,255,255,0.7);
+}
+
+.eus-carousel-timer {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.eus-carousel-timer-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.4);
+  transition: width linear;
+}
+
+/* Brighten KPI card labels and System Overview labels */
+.kpi-card .text-secondary,
+#dashSystemOverview .text-secondary {
+  color: #ffffff !important;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* Also brighten the System Overview values */
+#dashSystemOverview #modelDevice,
+#dashSystemOverview #modelLoadedAt,
+#dashSystemOverview #modelWeights,
+#dashSystemOverview #modelClasses {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Brighten the "System Overview" heading itself */
+#dashSystemOverview .fw-semibold {
+  color: #ffffff !important;
+}
+/* ── Filter labels: bold white ── */
+.form-label.small.text-secondary {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* ── Filter section heading ("Filters" text) ── */
+.card .fw-semibold {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* ── Table headers: bold white ── */
+.table-dark thead th,
+.table thead th {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
